@@ -1,0 +1,30 @@
+zabbix_export:
+  version: '6.4'
+  host_groups:
+    - uuid: f2481361f99448eea617b7b1d4765566
+      name: 'Discovered hosts'
+  hosts:
+    - host: 192.168.1.1
+      name: 192.168.1.11
+      templates:
+        - name: 'Cisco IOS by SNMP'
+      groups:
+        - name: 'Discovered hosts'
+      interfaces:
+        - interface_ref: if2
+        - type: SNMP
+          ip: 192.168.1.12
+          port: '161'
+          details:
+            community: public
+          interface_ref: if1
+      discovery_rules:
+        - name: 'SIP Server Discovery'
+          key: sip.if.discovery
+          lifetime: 360d
+          interface_ref: if2
+          item_prototypes:
+            - name: 'SIP Server -  {#IFNAME}'
+              key: 'sip.if.in["{#IFNAME}"]'
+              interface_ref: if2
+      inventory_mode: DISABLED
