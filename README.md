@@ -1,7 +1,7 @@
 # zabbix_plugins
-Custom Plugins
 
-Add sip_server_discovery.yaml in zabbix.
+Add sip_server_discovery.yaml in zabbix host. 
+
 Install Redis server
 
 Request plugin trial and custom solutions on my discord channel.
