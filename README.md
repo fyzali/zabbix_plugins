@@ -2,8 +2,10 @@
 
 1- Install Redis server
 
+2- pip3 install redis
 
-2- Add below lines in /etc/zabbix/zabbix_agentd.conf 
+
+3- Add below lines in /etc/zabbix/zabbix_agentd.conf 
 
 ##
 UserParameter=sip.if.discovery,python3 /etc/zabbix/discover.py
@@ -12,7 +14,7 @@ UserParameter=sip.if.in[*],python3 /etc/zabbix/sip_server.py '$1'
 ##
 
 
-3- sip_server_discovery.yaml in zabbix host. 
+4- sip_server_discovery.yaml in zabbix host. 
 
 
 
